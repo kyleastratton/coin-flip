@@ -51,4 +51,9 @@ const imageUrl = result === "Heads" ?
         resultIcon.classList.remove('flip'); 
     }, 500); 
 }
-  
+
+function reset() {
+    let resetValue = 0;
+    document.querySelector("#headsScore").innerHTML = resetValue;
+    document.querySelector("#tailsScore").innerHTML = resetValue;
+}
