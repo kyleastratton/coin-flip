@@ -42,13 +42,13 @@ const tossBtn = document.getElementById('click');
 
 function tossresultFunction(result) {  
 const imageUrl = result === "Heads" ? 
-'./assets/h.png' : 
-'./assets/t.png'; 
+'./assets/letter-h.png' : 
+'./assets/letter-t.png'; 
     resultIcon.classList.add('flip'); 
     setTimeout(() => { 
         resultIcon.innerHTML =  
             `<img src="${imageUrl}" alt="${result}">`; 
         resultIcon.classList.remove('flip'); 
-    }, 1000); 
+    }, 500); 
 }
   
