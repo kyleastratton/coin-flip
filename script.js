@@ -10,12 +10,13 @@ function flip() {
     }
 };
 
-function updateResult(coin) {
-    document.getElementById("result").innerHTML = coin;
-    if (coin === "Heads") {
+function updateResult(result) {
+    document.getElementById("result").innerHTML = result;
+    tossresultFunction(result);
+    if (result === "Heads") {
         addHeads();
     } 
-    if (coin === "Tails") {
+    if (result === "Tails") {
         addTails();
     }
 };
@@ -33,3 +34,21 @@ function addTails() {
     let newValue = numberValue + 1;
     document.querySelector("#tailsScore").innerHTML = newValue;
 }
+
+// result flip
+
+const resultIcon = document.getElementById('coin'); 
+const tossBtn = document.getElementById('click'); 
+
+function tossresultFunction(result) {  
+const imageUrl = result === "Heads" ? 
+'./assets/h.png' : 
+'./assets/t.png'; 
+    resultIcon.classList.add('flip'); 
+    setTimeout(() => { 
+        resultIcon.innerHTML =  
+            `<img src="${imageUrl}" alt="${result}">`; 
+        resultIcon.classList.remove('flip'); 
+    }, 1000); 
+}
+  
